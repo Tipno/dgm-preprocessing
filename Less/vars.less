@@ -1,0 +1,118 @@
+//Break Points
+@tablet: (max-width: 786px);
+@phone: (max-width: 633px);
+
+//Colors
+    @whiteText: #fff;
+    @subtleGrey: #cdcdcd;
+
+    //Backgrounds
+
+    @headerBackground: #232f3e;
+    @footerTopBackground: #37475a;
+
+    @greybackground: #eaeded;
+
+    //checkout colors
+    @buynowborder: #a38a51;
+    @buynowfiller: #f5d586;
+    @addtocartborder: #a87235;
+    @addtocartfiller: #eca14b;
+
+    @checkoutBorder: @subtleGrey;
+
+    //products 
+    @stars: #ffba01;
+    @savings: #B12704;
+
+    //quicklinks
+    @backgroundColor: #f2fafb;
+
+    //search bar 
+    @searchLeftBG: #f3f3f3;
+    @searchRightBG: #febd69;
+
+    //tagline
+    @boldTag: #2894f3;
+
+//Mixins
+.custButton(@color: black, @bgColor: white, @bdColor: grey ) {
+    color: @color;
+    background-color: @bgColor;
+    border: 1px solid @bdColor;
+    padding: 5px 40px;
+}
+
+.productContainer() {
+    padding: 15px 0;
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        padding: 15px;
+        height: 100%;
+
+        .productName {
+            margin: 0 0 10px 0;
+            align-self: flex-start;
+            font-weight: bold;
+            font-size: 21px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .productImg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .productContent {
+            display: flex;
+            justify-content: space-between;
+
+            .left {
+                p {
+                    margin: 0 0 20px 0;
+                }
+                .button {
+                    display: flex;
+                    justify-content: center;
+                    .custButton(@color: black, @bgColor: white, @bdColor: grey ); 
+                }
+                width: 35%;
+                @media @phone {
+                    width: 100%;
+                }
+            }
+            .right {
+                width: 60%;
+                @media @phone {
+                    width: 100%;
+                }
+            }
+            @media @phone {
+                flex-wrap: wrap;
+            }
+        }
+
+        hr {
+            width: 100%;
+        }
+    }
+
+    @media @phone {
+        flex-wrap: wrap;
+        margin: 0 10px;
+    }
+}
+
+.center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
